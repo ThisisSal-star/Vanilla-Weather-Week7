@@ -8,7 +8,7 @@ function searchCity (city){
 
 let tempElement = document.querySelector("#weather-temp");
 let temperature = Response.data.temperature.current;
-let cityElement = document.querySelector("#city");
+let cityElement = document.querySelector("#weather-city");
 cityElement.innerHTML = Response.data.city;
 tempElement.innerHTML = Math.round(temperature);
 
@@ -16,8 +16,7 @@ tempElement.innerHTML = Math.round(temperature);
 function submitForm (event){
 event.preventDefault();
 let searchinput=document.querySelector("#search-input");
-let cityelement = document.querySelector("#weather-city");
-cityelement.innerHTML = searchinput.value;
+
 searchCity(searchinput.valu);
 }
 
