@@ -6,6 +6,12 @@ function searchCity (city){
 
 }
 
+let tempElement = document.querySelector("#weather-temp");
+let temperature = Response.data.temperature.current;
+let cityElement = document.querySelector("#city");
+cityElement.innerHTML = Response.data.city;
+tempElement.innerHTML = Math.round(temperature);
+
 
 function submitForm (event){
 event.preventDefault();
