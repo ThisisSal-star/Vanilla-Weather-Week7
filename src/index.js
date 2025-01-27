@@ -7,11 +7,11 @@ let cityElement = document.querySelector("#weather-city");
 let descriptionElement = document.querySelector("#description");
 let humidityElement = document.querySelector("#humidity");
 let windSpeedElement = document.querySelector("#wind-speed");
-let timeElement + document.querySelector("#time");
+let timeElement = document.querySelector("#time");
 let date = new date (response.data.time * 1000);
 
 cityElement.innerHTML = response.data.city;
-timeElement.innerHTML = `${date.getDay()} ${date.getHours()}: ${date.getMinutes}`;
+timeElement.innerHTML = formatDate(date);
 descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
@@ -20,7 +20,8 @@ tempElement.innerHTML = Math.round(temperature);
 }
 
 function formatDate(date){
-    let days = date.getday();
+
+    let minutes = date.getMinutes();
     let hours = date.getHours();
     let days = [
         "Sunday",
@@ -31,8 +32,9 @@ function formatDate(date){
         "Friday",
         "Saturday",
     ];
-    let days =days [date.gateDay()];
-    return "Monday 12:49";
+    let day =days [date.gateDay()];
+    return `${day} ${hours}:${minutes}`;
+
 }
 function searchCity (city){
     let apiKey = "ad031o47ac65t5df81db4b9e365cb480";
