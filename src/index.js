@@ -8,7 +8,7 @@ let descriptionElement = document.querySelector("#description");
 let humidityElement = document.querySelector("#humidity");
 let windSpeedElement = document.querySelector("#wind-speed");
 let timeElement = document.querySelector("#time");
-let date = new date (response.data.time * 1000);
+let date = new Date (response.data.time * 1000);
 
 cityElement.innerHTML = response.data.city;
 timeElement.innerHTML = formatDate(date);
@@ -33,9 +33,12 @@ function formatDate(date){
         "Saturday",
     ];
     let day =days [date.gateDay()];
+
+   
     return `${day} ${hours}:${minutes}`;
 
 }
+    
 function searchCity (city){
     let apiKey = "ad031o47ac65t5df81db4b9e365cb480";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -55,4 +58,3 @@ searchCity(searchinput.value);
 
 let searchForm = document.querySelector ("#Search-form");
 searchForm.addEventListener("submit", submitForm);
-
