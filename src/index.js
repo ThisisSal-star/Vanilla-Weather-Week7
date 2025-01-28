@@ -46,7 +46,7 @@ function formatDate(date){
         "Friday",
         "Saturday",
     ];
-    let day =days [date.gateDay()];
+    let day =days [date.getDay()];
 
     if (minutes < 10) {
         minutes = `0${minutes}`;
@@ -68,5 +68,3 @@ searchCity(searchinput.value);
 
 let searchForm = document.querySelector ("#Search-form");
 searchForm.addEventListener("submit", submitForm);
-
-searchCity("Paris");
