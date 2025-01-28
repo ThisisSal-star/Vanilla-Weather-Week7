@@ -63,7 +63,7 @@ header{
 }
 
 .weather-icon{
-    font-size: 42px;
+    width: 80px;
     margin-top: 20px;
 }
 .weather-temp{
