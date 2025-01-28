@@ -28,7 +28,7 @@ descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 temperatureElement.innerHTML = Math.round(temperature);
-iconElement.innerHTML =`<img src ="${response.data.condition.icon_url} "class="weather-icon" `
+iconElement.innerHTML =`<img src ="${response.data.condition.icon_url}"class="weather-icon"/> `
 
 
 }
@@ -68,3 +68,5 @@ searchCity(searchinput.value);
 
 let searchForm = document.querySelector ("#Search-form");
 searchForm.addEventListener("submit", submitForm);
+
+searchCity("Paris");
